@@ -8,10 +8,10 @@ USE ieee.std_logic_1164.all;
 -------------------------------------------------------
 ENTITY adder IS
 	PORT(		Input_A		:	IN		STD_LOGIC;
-				Input_B		:	IN		STD_LOGIC;
-				Input_Cin	:	IN		STD_LOGIC;
-				S				:	OUT	STD_LOGIC;
-				Cout			:  OUT	STD_LOGIC);
+			Input_B		:	IN		STD_LOGIC;
+			Input_Cin	:	IN		STD_LOGIC;
+			S		:	OUT		STD_LOGIC;
+			Cout		: 	OUT		STD_LOGIC);
 END ENTITY adder;
 -------------------------------------------------------
 ARCHITECTURE gateLevel OF adder IS
@@ -32,7 +32,7 @@ BEGIN
 	-- Product terms
 	bothHigh: 	p0	<= input_A AND (NOT input_B) AND (NOT input_Cin);
 	bothLow:  	p1	<= (NOT input_A) AND input_B AND (NOT input_Cin);
-	both:		 	p2	<= (NOT input_A) AND (NOT input_B) AND input_Cin;
+	both:		p2	<= (NOT input_A) AND (NOT input_B) AND input_Cin;
 	both2:	 	p3	<= input_A AND input_B AND input_Cin;
 	bothHigh1: 	p4	<= input_A AND (NOT input_B) AND input_Cin;
 	bothLow2:  	p5	<= (NOT input_A) AND input_B AND  input_Cin;
