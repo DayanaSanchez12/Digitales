@@ -4,7 +4,7 @@ USE ieee.std_logic_1164.all;
 ENTITY bin_to_sseg IS
 PORT(
 		bin	  : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
-		sseg    : OUT STD_LOGIC_VECTOR(6 DOWNTO 0));
+		sseg   	  : OUT STD_LOGIC_VECTOR(6 DOWNTO 0));
 END bin_to_sseg;		
 ARCHITECTURE behaviour OF bin_to_sseg is
 BEGIN
