@@ -5,8 +5,8 @@ USE ieee.std_logic_arith.all;
 -------------------------------------------------------
 ENTITY multiplicador IS
 	PORT(		input_A		:	IN			STD_LOGIC_VECTOR (7 DOWNTO 0);
-				input_B		:	IN			STD_LOGIC_VECTOR (7 DOWNTO 0);
-				S2				:	OUT		STD_LOGIC_VECTOR (7 DOWNTO 0));
+			input_B		:	IN			STD_LOGIC_VECTOR (7 DOWNTO 0);
+			S2		:	OUT			STD_LOGIC_VECTOR (7 DOWNTO 0));
 END ENTITY multiplicador;
 -------------------------------------------------------
 ARCHITECTURE functional OF multiplicador IS
@@ -44,26 +44,26 @@ BEGIN
 		PORT MAP (
 			input_A      => p0(o),
 			input_B      => p1(o),
-			input_Cin	 => p6(o),
-			S	   		 => p4(o),
-			Cout			 => p6(o+1));			
+			input_Cin    => p6(o),
+			S	     => p4(o),
+			Cout	     => p6(o+1));			
 		END GENERATE;
 		dosfilassum: FOR u IN 0 TO 6 GENERATE
 		Sum: ENTITY work.adder
 		PORT MAP (
 			input_A      => p4(u),
 			input_B      => p2(u),
-			input_Cin	 => p7(u),
-			S	   		 => p5(u),
-			Cout			 => p7(u+1));			
+			input_Cin    => p7(u),
+			S	     => p5(u),
+			Cout	     => p7(u+1));			
 		END GENERATE;
 		dosfilassum1: FOR r IN 0 TO 7 GENERATE
 		Sum: ENTITY work.adder
 		PORT MAP (
 			input_A      => p5(r),
 			input_B      => p3(r),
-			input_Cin	 => p8(r),
-			S	   		 => S2(r),
-			Cout			 => p8(r+1));			
+			input_Cin    => p8(r),
+			S	     => S2(r),
+			Cout	     => p8(r+1));			
 		END GENERATE;
 END;
